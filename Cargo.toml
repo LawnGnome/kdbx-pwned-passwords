@@ -1,0 +1,21 @@
+[package]
+name = "kdbx-pwned-passwords"
+version = "0.1.0"
+edition = "2024"
+description = "A quick and dirty tool to check passwords in a Keepass (.kdbx) database against the Pwned Passwords service."
+license = "MIT"
+
+[dependencies]
+clap = { version = "4.5.51", features = ["derive"] }
+fstr = "0.2.15"
+indicatif = "0.18.2"
+itertools = "0.14.0"
+kdbx-rs = "0.5.2"
+reqwest = { version = "0.12.24", default-features = false, features = [
+    "blocking",
+    "brotli",
+    "rustls-tls",
+] }
+rpassword = "7.4.0"
+sha1_smol = { version = "1.0.1", features = ["std"] }
+thiserror = "2.0.17"
